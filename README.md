@@ -37,8 +37,8 @@ docker container run -d --name email-accounts-generator-api -p 6060:6060 email-a
   
   body:
 
-    ```
-    {
+```js
+  {
     "nome_completo": "Pedro Silva de Oliveira"
-    }
-    ```
+  }
+```
