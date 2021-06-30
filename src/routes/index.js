@@ -1,8 +1,8 @@
 const express = require('express')
 const router = express.Router()
 
-const mailsRoutes = require('./mails.routes')
+const emailsAccountsRoutes = require('./email-account.routes')
 
-router.use('/mails', mailsRoutes)
+router.use('/email-accounts', emailsAccountsRoutes)
 
 module.exports = router

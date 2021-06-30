@@ -32,7 +32,7 @@ docker container run -d --name email-accounts-generator-api -p 6060:6060 email-a
 <br/>
 
  - POST </br>
-  http://localhost:6060/api/v1/mails/generate
+  http://localhost:6060/api/v1/email-accounts/generate
   </br>
   
   body:
