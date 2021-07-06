@@ -121,7 +121,7 @@ async function getFirstAvailableEMail(mails_suggestions) {
     const firstAvailableMail = []
     await Promise.all(mails_suggestions.map(async function (mail) {
         if (mail.existsInLDAP == false) { //ver se ta OK isso aqui
-            firstAvailableMail.push(mail.mail)
+            firstAvailableMail.push(mail.email)
         }
 
     }));
