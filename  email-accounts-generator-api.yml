@@ -1,0 +1,25 @@
+version: '3.3'
+
+services:
+  email-generator-api:
+    image: ifrs/email-generator-api
+    restart: always
+    ports:
+      - 6060:6060
+    # ATENÇÂO - NÂO ESQUEÇA ALTERAR O NOME DO SERVIÇO NAS ROTAS SENÃO QUEBRA AS OUTRAS APLICAÇÕES 
+    # (ex: troque traefik.http.routers.PORTAINER..... por um nome representativo e único da sua aplicação  ) 
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.email-generator-api.rule=Host(`email-generator-api.sertao.ifrs.edu.br`)"
+      - "traefik.http.services.email-generator-api.loadbalancer.server.port=9000"
+      - "traefik.http.routers.email-generator-api.entrypoints=websecure"
+      - "traefik.http.routers.email-generator-api.tls"
+    networks:
+      - traefik-net
+
+volumes:
+    data:
+
+networks:
+  traefik-net:
+     external: true
